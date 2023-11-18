@@ -24,4 +24,4 @@ def main(bruh):
             elif livro[3] == 7:
                 categoria['Revistas e Quadrinhos'] = [f"{livro[0]}"]
         else: break
-Ação = int(input("Digite o Numero da Ação que sera Realizada \n 1-Adição \n 2-Visualização \n 3-Atualizar \n 4-Remover \n 5-Visualização Por Categoria \n 6-Visualizar o Total Gasto"))
+Ação = int(input("Digite o Numero da Ação que sera Realizada \n 1-Adição \n 2-Visualização \n 3-Atualizar \n 4-Remover \n 5-Visualização Por Categoria \n 6-Visualizar o Total Gasto \n :"))

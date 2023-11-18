@@ -1,1 +1,27 @@
-
+import os
+os.system ("cls")
+valor = []
+categoria = {'Ação/Aventura' : [], 'Romance':[], 'Drama/Suspence': [], 'Terror':[], 'Documentario/Noticias':[],'Comedia':[],'Revistas e Quadrinhos':[] }
+def main(bruh):
+    while True:
+        if bruh == 1:
+            livro = [input("Digite o Nome do Livro: "), input("Digite o Autor do Livro: "), int(input("Digite o Preço do Livro: ")), int(input("Digite o Numero correspondente a sua categoria sendo 1-Ação/Aventura, 2-Romance, 3-Drama/Suspence, 4-Terror, 5-Documental/Noticias, 6-Comedia, 7-Revistas e Quadrinhos")), input("Digite um breve resumo do Livro: ")]
+            arquivo = open(f"{livro[0]}.txt", "w")
+            arquivo.writelines(f"{livro}")
+            valor.append(int(input("Digite novamente o valor do livro: ")))
+            if livro[3] == 1:
+                categoria['Ação/Aventura'] = [f"{livro[0]}"]
+            elif livro[3] == 2:
+                categoria['Romance'] = [f"{livro[0]}"]
+            elif livro[3] == 3:
+                categoria['Drama/Suspence'] = [f"{livro[0]}"]
+            elif livro[3] == 4:
+                categoria['Terror'] = [f"{livro[0]}"]
+            elif livro[3] == 5:
+                categoria['Documentario/Noticias'] = [f"{livro[0]}"]
+            elif livro[3] == 6:
+                categoria['Comedia'] = [f"{livro[0]}"]
+            elif livro[3] == 7:
+                categoria['Revistas e Quadrinhos'] = [f"{livro[0]}"]
+        else: break
+Ação = int(input("Digite o Numero da Ação que sera Realizada \n 1-Adição \n 2-Visualização \n 3-Atualizar \n 4-Remover \n 5-Visualização Por Categoria \n 6-Visualizar o Total Gasto"))

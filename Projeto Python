@@ -1,6 +1,12 @@
 import os
 os.system ("cls")
-categoria = {'Ação/Aventura' : [], 'Romance':[], 'Drama/Suspence': [], 'Terror':[], 'Documentario/Noticias':[],'Comedia':[],'Revistas e Quadrinhos':[] }
+Ação_Aventura = []
+Romance = []
+Drama_Suspence = []
+Terror = []
+Documentario_Noticias = []
+Comedia = []
+Revistas_Quadrinhos = []
 def main(bruh):
     while True:
         if bruh == 1:
@@ -8,26 +14,44 @@ def main(bruh):
             arquivo = open(f"{livro[0]}.txt", "w")
             arquivo.writelines(f"{livro}")
             if livro[3] == 1:
-                categoria['Ação/Aventura'] = [f"{livro[0]}"]
+                Ação_Aventura.append(f"{livro[0]}")
+                arquivo2 = open("ação e aventura.txt", "a", encoding="utf8")
+                arquivo2.writelines(Ação_Aventura)
+                arquivo2.close()
             elif livro[3] == 2:
-                categoria['Romance'] = [f"{livro[0]}"]
+                Romance.append(f"{livro[0]}")
+                arquivo2 = open("romance.txt", "a", encoding="utf8")
+                arquivo2.writelines(Romance)
+                arquivo2.close()
             elif livro[3] == 3:
-                categoria['Drama/Suspence'] = [f"{livro[0]}"]
+                Drama_Suspence.append(f"{livro[0]}")
+                arquivo2 = open("drama e suspence.txt", "a", encoding="utf8")
+                arquivo2.writelines(Drama_Suspence)
+                arquivo2.close()
             elif livro[3] == 4:
-                categoria['Terror'] = [f"{livro[0]}"]
+                Terror.append(f"{livro[0]}")
+                arquivo2 = open("terror.txt", "a", encoding="utf8")
+                arquivo2.writelines(Terror)
+                arquivo2.close()
             elif livro[3] == 5:
-                categoria['Documentario/Noticias'] = [f"{livro[0]}"]
+                Documentario_Noticias.append(f"{livro[0]}")
+                arquivo2 = open("documentario e noticias.txt", "a", encoding="utf8")
+                arquivo2.writelines(Documentario_Noticias)
+                arquivo2.close()
             elif livro[3] == 6:
-                categoria['Comedia'] = [f"{livro[0]}"]
+                Comedia.append(f"{livro[0]}")
+                arquivo2 = open("comedia.txt", "a", encoding="utf8")
+                arquivo2.writelines(Comedia)
+                arquivo2.close()
             elif livro[3] == 7:
-                categoria['Revistas e Quadrinhos'] = [f"{livro[0]}"]
-            arquivo.close()
-            arquivo = open("categorias.txt", "a", encoding="utf8")
-            arquivo.writelines(categoria)
+                Revistas_Quadrinhos.append(f"{livro[0]}")
+                arquivo2 = open("revistas e quadrinhos.txt", "a", encoding="utf8")
+                arquivo2.writelines(Revistas_Quadrinhos)
+                arquivo2.close()
             arquivo.close()
             arquivo = open("total.txt", "a", encoding= "utf8")
             valor = float(livro[2])
-            arquivo.writelines(float(f"{valor}"))
+            arquivo.writelines((f"{valor}"))
             arquivo.close()
         elif bruh == 2:
             a = input("Digite o Nome do Livro: ")
@@ -36,40 +60,217 @@ def main(bruh):
             arquivo.close()
         elif bruh == 3:
             a = (input("Digite o Livro que Se Deseja Modificar: "))
-            arquivo = open(f"a", "r", encoding="utf8")
+            arquivo = open(f"{a}.txt", "r", encoding="utf8")
             dados = arquivo.read()
-            valor = float(dados[2])
+            valor = (dados[2])
+            if dados[3] == 1:
+                arquivo2 = open("ação e aventura.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("ação e aventura.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 2:
+                arquivo2 = open("romance.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("romance.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 3:
+                arquivo2 = open("drama e suspence.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("drama e suspence.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 4:
+                arquivo2 = open("terror.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("terror.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 5:
+                arquivo2 = open("documentario e noticias.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("documentario e noticias.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 6:
+                arquivo2 = open("comedia.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("comedia.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 7:
+                arquivo2 = open("revistas e quadrinhos.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("revistas e quadrinhos.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
             arquivo.close()
             arquivo = open ("total.txt", "a", encoding="utf8")
-            arquivo.writelines(float(f"-{valor}"))
+            arquivo.writelines((f"-*{valor}"))
             arquivo.close()
+            os.remove(f"{a}.txt")
             livro = [input("Digite o Novo nome do Livro: "), input("Digite o Autor do Livro: "), float(input("Digite o Preço do Livro: ")), int(input("Digite o Numero correspondente a sua categoria sendo 1-Ação/Aventura, 2-Romance, 3-Drama/Suspence, 4-Terror, 5-Documental/Noticias, 6-Comedia, 7-Revistas e Quadrinhos")), input("Digite um breve resumo do Livro: ")]
             arquivo = open(f"{livro[0]}.txt", "w", encoding="utf8")
             arquivo.writelines(f"{livro}")
             if livro[3] == 1:
-                categoria['Ação/Aventura'] = [f"{livro[0]}"]
+                Ação_Aventura.append(f"{livro[0]}")
+                arquivo2 = open("ação e aventura.txt", "a", encoding="utf8")
+                arquivo2.writelines(Ação_Aventura)
+                arquivo2.close()
             elif livro[3] == 2:
-                categoria['Romance'] = [f"{livro[0]}"]
+                Romance.append(f"{livro[0]}")
+                arquivo2 = open("romance.txt", "a", encoding="utf8")
+                arquivo2.writelines(Romance)
+                arquivo2.close()
             elif livro[3] == 3:
-                categoria['Drama/Suspence'] = [f"{livro[0]}"]
+                Drama_Suspence.append(f"{livro[0]}")
+                arquivo2 = open("drama e suspence.txt", "a", encoding="utf8")
+                arquivo2.writelines(Drama_Suspence)
+                arquivo2.close()
             elif livro[3] == 4:
-                categoria['Terror'] = [f"{livro[0]}"]
+                Terror.append(f"{livro[0]}")
+                arquivo2 = open("terror.txt", "a", encoding="utf8")
+                arquivo2.writelines(Terror)
+                arquivo2.close()
             elif livro[3] == 5:
-                categoria['Documentario/Noticias'] = [f"{livro[0]}"]
+                Documentario_Noticias.append(f"{livro[0]}")
+                arquivo2 = open("documentario e noticias.txt", "a", encoding="utf8")
+                arquivo2.writelines(Documentario_Noticias)
+                arquivo2.close()
             elif livro[3] == 6:
-                categoria['Comedia'] = [f"{livro[0]}"]
+                Comedia.append(f"{livro[0]}")
+                arquivo2 = open("comedia.txt", "a", encoding="utf8")
+                arquivo2.writelines(Comedia)
+                arquivo2.close()
             elif livro[3] == 7:
-                categoria['Revistas e Quadrinhos'] = [f"{livro[0]}"]
-            arquivo.close()
-            arquivo = open("categorias.txt", "a", encoding="utf8")
-            arquivo.writelines(categoria)
+                Revistas_Quadrinhos.append(f"{livro[0]}")
+                arquivo2 = open("revistas e quadrinhos.txt", "a", encoding="utf8")
+                arquivo2.writelines(Revistas_Quadrinhos)
+                arquivo2.close()
             arquivo.close()
             arquivo = open("total.txt", "a", encoding= "utf8")
             valor = float(livro[2])
-            arquivo.writelines(float(f"{valor}"))
+            arquivo.writelines((f"{valor}"))
+            arquivo.close()
+        elif bruh == 4:
+            a = input("digite o nome do livro que se deseja excluir: ")
+            arquivo = open(f"{a}.txt", "r", encoding="utf8")
+            dados = arquivo.read()
+            valor = (dados[2])
+            if dados[3] == 1:
+                arquivo2 = open("ação e aventura.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("ação e aventura.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 2:
+                arquivo2 = open("romance.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("romance.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 3:
+                arquivo2 = open("drama e suspence.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("drama e suspence.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 4:
+                arquivo2 = open("terror.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("terror.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 5:
+                arquivo2 = open("documentario e noticias.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("documentario e noticias.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 6:
+                arquivo2 = open("comedia.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("comedia.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 7:
+                arquivo2 = open("revistas e quadrinhos.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f"{dados[0]}")
+                arquivo2.close()
+                arquivo2 = open("revistas e quadrinhos.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            arquivo.close()
+            arquivo = open ("total.txt", "a", encoding="utf8")
+            arquivo.writelines((f"-*{valor}"))
+            arquivo.close()
+            os.remove(f"{a}.txt")
+        elif bruh == 5:
+            a = int(input("digite o numero correspondente a categoria que se deseja visualizar sendo 1-Ação/Aventura, 2-Romance, 3-Drama/Suspence, 4-Terror, 5-Documental/Noticias, 6-Comedia, 7-Revistas e Quadrinhos"))
+            if a == 1: 
+                arquivo = open("ação e aventura.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 2: 
+                arquivo = open("romance.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 3: 
+                arquivo = open("drama e suspence.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 4: 
+                arquivo = open("terror.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 5: 
+                arquivo = open("documentario e noticias.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 6: 
+                arquivo = open("comedia.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 7: 
+                arquivo = open("revistas e quadrinhos.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+        elif bruh == 6:
+            arquivo = open("total.txt", "r", encoding="utf8")
+            dados = (arquivo.read())
+            c = sum(dados)
+            print(c)
             arquivo.close()
         else: break
-        bruh = int(input("\n \n \n \n Deseja Fazer Mais Alguma Alteração sendo \n 1-Adição \n 2-Visualização \n 3-Atualizar \n 4-Remover \n 5-Visualização Por Categoria \n 6-Visualizar o Total Gasto \n :"))
+        bruh = int(input("\n \n Deseja Fazer Mais Alguma Alteração sendo \n 1-Adição \n 2-Visualização \n 3-Atualizar \n 4-Remover \n 5-Visualização Por Categoria \n 6-Visualizar o Total Gasto \n :"))
     return
 Ação = int(input("Digite o Numero da Ação que sera Realizada \n 1-Adição \n 2-Visualização \n 3-Atualizar \n 4-Remover \n 5-Visualização Por Categoria \n 6-Visualizar o Total Gasto \n :"))
 main(Ação)

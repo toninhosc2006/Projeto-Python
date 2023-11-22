@@ -1,0 +1,42 @@
+ elif bruh == 5:
+            a = int(input("digite o numero correspondente a categoria que se deseja visualizar sendo 1-Ação/Aventura, 2-Romance, 3-Drama/Suspence, 4-Terror, 5-Documental/Noticias, 6-Comedia, 7-Revistas e Quadrinhos"))
+            if a == 1: 
+                arquivo = open("ação e aventura.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 2: 
+                arquivo = open("romance.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 3: 
+                arquivo = open("drama e suspence.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 4: 
+                arquivo = open("terror.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 5: 
+                arquivo = open("documentario e noticias.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 6: 
+                arquivo = open("comedia.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+            elif a == 7: 
+                arquivo = open("revistas e quadrinhos.txt", "r", encoding="utf8")
+                print(arquivo.readlines)
+                arquivo.close()
+        elif bruh == 6:
+            arquivo = open("total.txt", "r", encoding="utf8")
+            dados = (arquivo.read())
+            c = []
+            c.append(float(dados))
+            print(sum(c))
+            arquivo.close()
+        else: break
+        bruh = int(input("\n \n Deseja Fazer Mais Alguma Alteração sendo \n 1-Adição \n 2-Visualização \n 3-Atualizar \n 4-Remover \n 5-Visualização Por Categoria \n 6-Visualizar o Total Gasto \n :"))
+    return
+Ação = int(input("Digite o Numero da Ação que sera Realizada \n 1-Adição \n 2-Visualização \n 3-Atualizar \n 4-Remover \n 5-Visualização Por Categoria \n 6-Visualizar o Total Gasto \n :"))
+main(Ação)

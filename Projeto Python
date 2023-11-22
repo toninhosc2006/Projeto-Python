@@ -50,8 +50,10 @@ def main(bruh):
                 arquivo2.close()
             arquivo.close()
             arquivo = open("total.txt", "a", encoding= "utf8")
-            valor = float(livro[2])
-            arquivo.writelines((f"{valor}"))
+            t = float(livro[2])
+            valor = []
+            valor.append(t)
+            arquivo.write((f"{valor}"))
             arquivo.close()
         elif bruh == 2:
             a = input("Digite o Nome do Livro: ")
@@ -62,11 +64,11 @@ def main(bruh):
             a = (input("Digite o Livro que Se Deseja Modificar: "))
             arquivo = open(f"{a}.txt", "r", encoding="utf8")
             dados = arquivo.read()
-            valor = (dados[2])
+            t = (dados[2])*(-1)
             if dados[3] == 1:
                 arquivo2 = open("ação e aventura.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("ação e aventura.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -74,7 +76,7 @@ def main(bruh):
             elif dados[3] == 2:
                 arquivo2 = open("romance.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("romance.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -82,7 +84,7 @@ def main(bruh):
             elif dados[3] == 3:
                 arquivo2 = open("drama e suspence.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("drama e suspence.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -90,7 +92,7 @@ def main(bruh):
             elif dados[3] == 4:
                 arquivo2 = open("terror.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("terror.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -98,7 +100,7 @@ def main(bruh):
             elif dados[3] == 5:
                 arquivo2 = open("documentario e noticias.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("documentario e noticias.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -106,7 +108,7 @@ def main(bruh):
             elif dados[3] == 6:
                 arquivo2 = open("comedia.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("comedia.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -114,14 +116,16 @@ def main(bruh):
             elif dados[3] == 7:
                 arquivo2 = open("revistas e quadrinhos.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("revistas e quadrinhos.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
                 arquivo2.close()
             arquivo.close()
             arquivo = open ("total.txt", "a", encoding="utf8")
-            arquivo.writelines((f"-*{valor}"))
+            valor = []
+            valor.append(t)
+            arquivo.write((f"{valor}"))
             arquivo.close()
             os.remove(f"{a}.txt")
             livro = [input("Digite o Novo nome do Livro: "), input("Digite o Autor do Livro: "), float(input("Digite o Preço do Livro: ")), int(input("Digite o Numero correspondente a sua categoria sendo 1-Ação/Aventura, 2-Romance, 3-Drama/Suspence, 4-Terror, 5-Documental/Noticias, 6-Comedia, 7-Revistas e Quadrinhos")), input("Digite um breve resumo do Livro: ")]
@@ -164,18 +168,20 @@ def main(bruh):
                 arquivo2.close()
             arquivo.close()
             arquivo = open("total.txt", "a", encoding= "utf8")
-            valor = float(livro[2])
+            t = float(livro[2])
+            valor = []
+            valor.append(t)
             arquivo.writelines((f"{valor}"))
             arquivo.close()
         elif bruh == 4:
             a = input("digite o nome do livro que se deseja excluir: ")
             arquivo = open(f"{a}.txt", "r", encoding="utf8")
             dados = arquivo.read()
-            valor = (dados[2])
+            t = (dados[2])*(-1)
             if dados[3] == 1:
                 arquivo2 = open("ação e aventura.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("ação e aventura.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -183,7 +189,7 @@ def main(bruh):
             elif dados[3] == 2:
                 arquivo2 = open("romance.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("romance.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -191,7 +197,7 @@ def main(bruh):
             elif dados[3] == 3:
                 arquivo2 = open("drama e suspence.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("drama e suspence.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -199,7 +205,7 @@ def main(bruh):
             elif dados[3] == 4:
                 arquivo2 = open("terror.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("terror.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -207,7 +213,7 @@ def main(bruh):
             elif dados[3] == 5:
                 arquivo2 = open("documentario e noticias.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("documentario e noticias.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -215,7 +221,7 @@ def main(bruh):
             elif dados[3] == 6:
                 arquivo2 = open("comedia.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("comedia.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
@@ -223,14 +229,16 @@ def main(bruh):
             elif dados[3] == 7:
                 arquivo2 = open("revistas e quadrinhos.txt", "r", encoding="utf8")
                 dados2 = arquivo2.readlines()
-                dados2.remove(f"{dados[0]}")
+                dados2.remove(f'{dados[0]}')
                 arquivo2.close()
                 arquivo2 = open("revistas e quadrinhos.txt", "w", encoding="utf8")
                 arquivo2.writelines(f"{dados2}")
                 arquivo2.close()
             arquivo.close()
             arquivo = open ("total.txt", "a", encoding="utf8")
-            arquivo.writelines((f"-*{valor}"))
+            valor = []
+            valor.append(t)
+            arquivo.writelines((f"{valor}"))
             arquivo.close()
             os.remove(f"{a}.txt")
         elif bruh == 5:
@@ -266,8 +274,9 @@ def main(bruh):
         elif bruh == 6:
             arquivo = open("total.txt", "r", encoding="utf8")
             dados = (arquivo.read())
-            c = sum(dados)
-            print(c)
+            c = []
+            c.append(float(dados))
+            print(sum(c))
             arquivo.close()
         else: break
         bruh = int(input("\n \n Deseja Fazer Mais Alguma Alteração sendo \n 1-Adição \n 2-Visualização \n 3-Atualizar \n 4-Remover \n 5-Visualização Por Categoria \n 6-Visualizar o Total Gasto \n :"))

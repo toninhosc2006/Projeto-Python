@@ -1,0 +1,50 @@
+import os
+os.system ("cls")
+Ação_Aventura = []
+Romance = []
+Drama_Suspence = []
+Terror = []
+Documentario_Noticias = []
+Comedia = []
+Revistas_Quadrinhos = []
+def main(bruh):
+    while True:
+        if bruh == 1:
+            livro = [input("Digite o Nome do Livro: "), input("Digite o Autor do Livro: "), float(input("Digite o Preço do Livro: ")), int(input("Digite o Numero correspondente a sua categoria sendo 1-Ação/Aventura, 2-Romance, 3-Drama/Suspence, 4-Terror, 5-Documental/Noticias, 6-Comedia, 7-Revistas e Quadrinhos")), input("Digite um breve resumo do Livro: ")]
+            arquivo = open(f"{livro[0]}.txt", "w")
+            arquivo.writelines(f"{livro}")
+            if livro[3] == 1:
+                Ação_Aventura.append(f"{livro[0]}")
+                arquivo2 = open("ação e aventura.txt", "a", encoding="utf8")
+                arquivo2.writelines(Ação_Aventura)
+                arquivo2.close()
+            elif livro[3] == 2:
+                Romance.append(f"{livro[0]}")
+                arquivo2 = open("romance.txt", "a", encoding="utf8")
+                arquivo2.writelines(Romance)
+                arquivo2.close()
+            elif livro[3] == 3:
+                Drama_Suspence.append(f"{livro[0]}")
+                arquivo2 = open("drama e suspence.txt", "a", encoding="utf8")
+                arquivo2.writelines(Drama_Suspence)
+                arquivo2.close()
+            elif livro[3] == 4:
+                Terror.append(f"{livro[0]}")
+                arquivo2 = open("terror.txt", "a", encoding="utf8")
+                arquivo2.writelines(Terror)
+                arquivo2.close()
+            elif livro[3] == 5:
+                Documentario_Noticias.append(f"{livro[0]}")
+                arquivo2 = open("documentario e noticias.txt", "a", encoding="utf8")
+                arquivo2.writelines(Documentario_Noticias)
+                arquivo2.close()
+            elif livro[3] == 6:
+                Comedia.append(f"{livro[0]}")
+                arquivo2 = open("comedia.txt", "a", encoding="utf8")
+                arquivo2.writelines(Comedia)
+                arquivo2.close()
+            elif livro[3] == 7:
+                Revistas_Quadrinhos.append(f"{livro[0]}")
+                arquivo2 = open("revistas e quadrinhos.txt", "a", encoding="utf8")
+                arquivo2.writelines(Revistas_Quadrinhos)
+                arquivo2.close()
